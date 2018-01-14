@@ -9,12 +9,15 @@
     "> 1%"
   ],
   "scripts": {
-    "start": "babel-node src",
+    "start": "babel-node src/server",
     "test": "eslint src",
     "precommit": "yarn test",
     "prepush": "yarn test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "compression": "^1.7.1",
+    "express": "^4.16.2"
+  },
   "devDependencies": {
     "babel-jest": "^22.0.6",
     "babel-preset-env": "^1.6.1",
