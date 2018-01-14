@@ -1,0 +1,12 @@
+{
+  "name": "fintechFun",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/akulaggarwal/fintechFun.git",
+  "author": "Akul <akul@komprise.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {}
+}
