@@ -10,20 +10,25 @@
   ],
   "scripts": {
     "start": "yarn dev:start",
-    "dev:start": "nodemon --ignore lib --exec babel-node src/server",
-    "prod:build": "rimraf lib && babel src -d lib --ignore .test.js",
+    "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
+    "dev:wds": "webpack-dev-server --progress",
+    "prod:build": "rimraf lib && babel src -d lib --ignore .test.js && NODE_ENV=production webpack -p --progress",
     "prod:start": "NODE_ENV=production pm2 start lib/server && pm2 logs",
     "prod:stop": "pm2 delete server",
+    "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
     "test": "eslint src && jest --coverage",
     "precommit": "yarn test",
-    "prepush": "yarn test"
+    "prepush": "yarn test & yarn prod:build"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "compression": "^1.7.1",
     "express": "^4.16.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-jest": "^22.0.6",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.15.0",
     "eslint-config-airbnb": "^16.1.0",
@@ -35,6 +40,8 @@
     "jest": "^22.0.6",
     "nodemon": "^1.14.11",
     "pm2": "^2.9.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0"
   }
 }
