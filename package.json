@@ -6,7 +6,10 @@
   "author": "Akul <akul@komprise.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node ."
+    "start": "babel-node src"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1"
+  }
 }
