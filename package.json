@@ -13,7 +13,10 @@
     "dev:start": "nodemon --ignore lib --exec babel-node src/server",
     "prod:build": "rimraf lib && babel src -d lib --ignore .test.js",
     "prod:start": "NODE_ENV=production pm2 start lib/server && pm2 logs",
-    "prod:stop": "pm2 delete server"
+    "prod:stop": "pm2 delete server",
+    "test": "eslint src && jest --coverage",
+    "precommit": "yarn test",
+    "prepush": "yarn test"
   },
   "dependencies": {
     "compression": "^1.7.1",
