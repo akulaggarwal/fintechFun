@@ -5,19 +5,26 @@
   "repository": "https://github.com/akulaggarwal/fintechFun.git",
   "author": "Akul <akul@komprise.com>",
   "license": "MIT",
-  "browserslist": ["> 1%"],
+  "browserslist": [
+    "> 1%"
+  ],
   "scripts": {
     "start": "babel-node src",
-    "test": "eslint src"
+    "test": "eslint src",
+    "precommit": "yarn test",
+    "prepush": "yarn test"
   },
   "dependencies": {},
   "devDependencies": {
+    "babel-jest": "^22.0.6",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.15.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-compat": "^2.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0"
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.14.3",
+    "jest": "^22.0.6"
   }
 }
