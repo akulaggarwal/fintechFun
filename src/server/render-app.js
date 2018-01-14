@@ -1,5 +1,3 @@
-// @flow
-
 import { STATIC_PATH } from '../shared/config';
 
 const renderApp = title =>
