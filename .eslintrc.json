@@ -18,6 +18,7 @@
     "no-unexpected-multiline": 2,
     "compat/compat": 2,
     "comma-dangle": "off",
-    "no-debugger": "warn"
+    "no-debugger": "warn",
+    "arrow-parens": 0
   }
 }
